@@ -14,16 +14,16 @@ import java.util.concurrent.ExecutionException;
 @RestController
 @RequestMapping("/api/hero")
 public class HeroController {
-    private final HeroService heroService;
 
+	private final HeroService heroService;
 
-    @GetMapping
-    public Hero getHero() throws ExecutionException, InterruptedException {
-        MDC.put("hero","hero100");
-        for (int i = 0; i < 10; i++) {
-            heroService.getHero();
-        }
-        return  heroService.getHero().get();
-    }
+	@GetMapping
+	public Hero getHero() throws ExecutionException, InterruptedException {
+		MDC.put("hero", "hero100");
+		for (int i = 0; i < 10; i++) {
+			heroService.getHero();
+		}
+		return heroService.getHero().get();
+	}
 
 }

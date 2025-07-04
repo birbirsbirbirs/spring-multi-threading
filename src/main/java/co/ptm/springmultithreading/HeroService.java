@@ -14,12 +14,12 @@ import java.util.concurrent.CompletableFuture;
 @RequiredArgsConstructor
 public class HeroService {
 
+	@Async
+	public CompletableFuture<Hero> getHero() {
+		Hero hero = Hero.builder().name(UUID.randomUUID().toString()).power(UUID.randomUUID().toString()).build();
+		log.info("returning hero: {}", hero);
+		log.info("mdc for hero: {}", MDC.get("hero"));
+		return CompletableFuture.completedFuture(hero);
+	}
 
-    @Async
-    public CompletableFuture<Hero> getHero(){
-        Hero hero = Hero.builder().name(UUID.randomUUID().toString()).power(UUID.randomUUID().toString()).build();
-        log.info("returning hero: {}",hero);
-        log.info("mdc for hero: {}", MDC.get("hero"));
-        return CompletableFuture.completedFuture(hero);
-    }
 }

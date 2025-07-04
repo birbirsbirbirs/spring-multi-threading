@@ -10,6 +10,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class Hero {
-    private String name;
-    private String power;
+
+	private String name;
+
+	private String power;
+
 }

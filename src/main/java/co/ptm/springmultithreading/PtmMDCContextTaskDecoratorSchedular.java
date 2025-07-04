@@ -5,7 +5,7 @@ import org.springframework.core.task.TaskDecorator;
 
 import java.util.Map;
 
-public class PtmMDCContextTaskDecorator implements TaskDecorator {
+public class PtmMDCContextTaskDecoratorSchedular implements TaskDecorator {
 
 	public static class MDCContextTaskDecorator implements Runnable {
 
@@ -23,6 +23,7 @@ public class PtmMDCContextTaskDecorator implements TaskDecorator {
 		public void run() {
 			try {
 				MDC.setContextMap(contextMap);
+				MDC.put("hero", "hero schedular 300");
 				runnable.run();
 			}
 			finally {
