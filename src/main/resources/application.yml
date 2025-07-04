@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: spring-multi-threading
+  output:
+    ansi:
+      enabled: always
