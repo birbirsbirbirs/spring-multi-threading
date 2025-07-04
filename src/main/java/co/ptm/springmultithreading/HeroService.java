@@ -22,4 +22,10 @@ public class HeroService {
 		return CompletableFuture.completedFuture(hero);
 	}
 
+	public Hero getHeroHero() {
+		Hero hero = Hero.builder().name(UUID.randomUUID().toString()).power(UUID.randomUUID().toString()).build();
+		log.info("returning hero: {}", hero);
+		return hero;
+	}
+
 }

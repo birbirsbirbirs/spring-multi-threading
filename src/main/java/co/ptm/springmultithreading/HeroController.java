@@ -26,4 +26,9 @@ public class HeroController {
 		return heroService.getHero().get();
 	}
 
+	@GetMapping("/hero")
+	public Hero getHeroHero() {
+		return heroService.getHeroHero();
+	}
+
 }

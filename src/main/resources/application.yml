@@ -4,3 +4,6 @@ spring:
   output:
     ansi:
       enabled: always
+  threads:
+    virtual:
+      enabled: true
