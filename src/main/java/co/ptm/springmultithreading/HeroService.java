@@ -19,6 +19,7 @@ public class HeroService {
 		Hero hero = Hero.builder().name(UUID.randomUUID().toString()).power(UUID.randomUUID().toString()).build();
 		log.info("returning hero: {}", hero);
 		log.info("mdc for hero: {}", MDC.get("hero"));
+		log.info("mdc for batchId: {}", MDC.get("batchId"));
 		return CompletableFuture.completedFuture(hero);
 	}
 

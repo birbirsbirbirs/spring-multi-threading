@@ -23,7 +23,6 @@ public class PtmMDCContextTaskDecoratorSchedular implements TaskDecorator {
 		public void run() {
 			try {
 				MDC.setContextMap(contextMap);
-				MDC.put("hero", "hero schedular 300");
 				runnable.run();
 			}
 			finally {
