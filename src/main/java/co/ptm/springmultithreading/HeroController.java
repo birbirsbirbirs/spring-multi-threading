@@ -28,7 +28,9 @@ public class HeroController {
 
 	@GetMapping("/hero")
 	public Hero getHeroHero() {
-		return heroService.getHeroHero();
+		Hero hero = heroService.getHeroHero();
+		log.info("from controller");
+		return hero;
 	}
 
 }

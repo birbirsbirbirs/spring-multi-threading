@@ -1,5 +1,6 @@
 package co.ptm.springmultithreading;
 
+import io.micrometer.tracing.annotation.NewSpan;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.MDC;
@@ -23,6 +24,7 @@ public class HeroService {
 		return CompletableFuture.completedFuture(hero);
 	}
 
+	@NewSpan
 	public Hero getHeroHero() {
 		Hero hero = Hero.builder().name(UUID.randomUUID().toString()).power(UUID.randomUUID().toString()).build();
 		log.info("returning hero: {}", hero);

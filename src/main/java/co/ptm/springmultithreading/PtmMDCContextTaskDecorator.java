@@ -10,7 +10,7 @@ import java.util.Map;
 @Slf4j
 public class PtmMDCContextTaskDecorator implements TaskDecorator {
 
-    public static class MDCContextTaskDecorator implements Runnable {
+	public static class MDCContextTaskDecorator implements Runnable {
 
 		private final Runnable runnable;
 
@@ -25,6 +25,7 @@ public class PtmMDCContextTaskDecorator implements TaskDecorator {
 
 		@Override
 		public void run() {
+
 			try {
 				MDC.setContextMap(contextMap);
 				runnable.run();
