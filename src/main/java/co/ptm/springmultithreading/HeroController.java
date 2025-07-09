@@ -1,5 +1,6 @@
 package co.ptm.springmultithreading;
 
+import io.opentelemetry.context.Context;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.MDC;
@@ -20,6 +21,7 @@ public class HeroController {
 	@GetMapping
 	public Hero getHero() throws ExecutionException, InterruptedException {
 		MDC.put("hero", "hero100");
+		log.info("{}", Context.current().toString());
 		for (int i = 0; i < 10; i++) {
 			heroService.getHero();
 		}
